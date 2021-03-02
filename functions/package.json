@@ -1,0 +1,15 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "rana_kamran",
+  "license": "ISC",
+  "dependencies": {
+    "faunadb": "^4.1.1"
+  }
+}
