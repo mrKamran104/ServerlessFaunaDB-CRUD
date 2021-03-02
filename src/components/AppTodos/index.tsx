@@ -23,7 +23,7 @@ const AppTodos = () => {
     if (task === "") return Swal.fire("Error","Please write some words","error")
     const todo = { title: e.target.title.value };
     // setTodoList([...todoList, { data: todo }]);
-    const res = await api.addTodo(todo);
+    await api.addTodo(todo);
     setTask("")
     setTodoList([...todoList, { data: todo }]);
     const data = await api.getAllTodos();
@@ -31,7 +31,7 @@ const AppTodos = () => {
   };
 
   const deleteTodo = async (id: string) => {
-    const res = await api.deleteTodo({ id: id });
+    await api.deleteTodo({ id: id });
     const data = await api.getAllTodos();
     setTodoList(data);
   };
@@ -52,7 +52,7 @@ const AppTodos = () => {
       },
     ]);
     if (result.value) {
-      const res = await api.updateTodo({
+      await api.updateTodo({
         title: result.value,
         id: todo.ref["@ref"].id,
       });

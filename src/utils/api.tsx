@@ -24,13 +24,12 @@ const updateTodo = (data: { id: string; title: string }) => {
   });
 };
 
-const deleteTodo = (todoId: { id: string }) => {
-  return fetch(`/.netlify/functions/deleteTodo`, {
+const deleteTodo = async (todoId: { id: string }) => {
+  const response = await fetch(`/.netlify/functions/deleteTodo`, {
     body: JSON.stringify(todoId),
     method: "POST",
-  }).then((response) => {
-    return response.json();
   });
+  return await response.json();
 };
 
 export default {
